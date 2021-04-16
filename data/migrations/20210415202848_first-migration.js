@@ -15,19 +15,19 @@ exports.up = function(knex) {
             .notNullable()
             .references("recipe_id")
             .inTable("recipes")
-            .onDelete("RESTRICT")
+            .onDelete("CASCADE")
     })
     .createTable("ingredients", tbl=>{
         tbl.increments("ingredients_id")
         tbl.string("ingredient_one").notNullable()
         tbl.string("ingredient_two")
         tbl.string("ingredient_three")
-        tbl.integer("recipie_id")
+        tbl.integer("recipe_id")
         .unsigned()
         .notNullable()
         .references("recipe_id")
         .inTable("recipes")
-        .onDelete("restrict")
+        .onDelete("CASCADE")
     })
 };
 

@@ -20,4 +20,6 @@ server.get("*", (req, res, next)=>{
     res.json({message: "API Up"});
 });
 
+module.exports = server;
+
 

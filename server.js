@@ -6,7 +6,7 @@ const helmet = require("helmet");
 const server = express();
 
 server.use(express.json());
-server.use("/api/routers", recipesRouter);
+server.use("/api/recipes", recipesRouter);
 server.use(cors());
 server.use(helmet());
 
@@ -16,7 +16,7 @@ server.use((err, req, res, next)=>{
 });
 
 //Sanity Check Endpoint
-server.get("*", (req, res, next)=>{
+server.get("/", (req, res, next)=>{
     res.json({message: "API Up"});
 });
 

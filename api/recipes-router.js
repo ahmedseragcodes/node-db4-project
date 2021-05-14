@@ -9,6 +9,13 @@ const router = express.Router();
 
 router.get("/", (req, res, next)=>{
 
+    Recipes.findAllRecipes()
+    .then((allRecipes)=>{
+        res.status(200).json(allRecipes);
+    })
+    .catch((err)=>{
+        next(err);
+    })
 
 })
 
